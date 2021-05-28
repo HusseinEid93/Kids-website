@@ -1,0 +1,13 @@
+mixin card(heading, img)
+   .card 
+      h2.card-heading #{heading}
+      img.card-img(src=`../images/toy-${img}.png`)
+      button.card-button 
+         each letter in [...'LearnMore']
+            span #{letter}
+      .circle 
+         .circle-content 
+            h3.circle-heading= heading 
+            p.circle-paragraph.
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut libero quos deleniti magnam tempore nostrum!
+            a.circle-btn(href="#") Buy now

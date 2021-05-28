@@ -1,0 +1,71 @@
+include components
+
+doctype html
+html(lang="en")
+   head 
+      meta(charset="UTF-8")
+      meta(
+         http-equiv="X-UA-Compatible" 
+         content="IE=edge"
+      )
+      meta(
+         name="viewport" 
+         content="width=device-width, initial-scale=1.0"
+      )
+      link(
+         rel="stylesheet" 
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      )
+      link(rel="stylesheet" href="../css/main.css")
+      script(src="../main.js" defer) 
+      title Kids Website 
+
+   body 
+      .container 
+         .menu 
+            - for(let i = 1; i <= 3; i++)
+               div(class=`menu-line-${i}`)
+
+
+         include navbar
+
+
+         // Section 1
+         section.section-1
+            h1.section-1-heading
+               each letter in ['k','i', 'd', 's']
+                  span(data-letter=letter) #{letter}
+
+
+         // Section 2
+         section.section-2 
+            h1.section-heading popular toys 
+            .cards-wrapper
+               +card("Puzzle", 1)
+               +card("Bear", 2)
+               +card("Lego", 3)
+
+
+         // Section 3 
+         section.section-3
+            h1.section-heading Daily Advice
+            p.
+               "You hereby have permission to stop worrying about your checklist—doing the laundry, pumping, buying diapers—and learn to be present with your baby. Enjoy your precious moments together 😊"
+            p.
+               "Expect odd food habits. Offer a variety. Don’t push, don’t panic. They’ll eat when they’re hungry 👍"
+
+
+         // Section 4
+         section.section-4 
+            h1.section-heading Gallery
+            .gallery 
+               - for(let i = 1; i <= 12; i++)
+                  a.gallery-link(href="#") 
+                     img(src=`../images/gallery-img-${i}.jpg`) 
+
+         
+         // Footer 
+         footer.footer 

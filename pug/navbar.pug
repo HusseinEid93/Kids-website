@@ -1,0 +1,10 @@
+nav.navbar 
+   .nav-list
+      each item in ['Home', 'About', 'Projects', 'Contact']
+         a(href="#" data-content=item) #{item} 
+   .social-media 
+      - const socialMedia = ['youtube', 'twitter-square', 'facebook-square', 'instagram-square'];
+      each item in socialMedia 
+         a(href="#"): i(class=`fab fa-${item}`) 
+   p.copyright-text.
+      Copyright &copy; Hussein Eid. All Rights Reserved. 
